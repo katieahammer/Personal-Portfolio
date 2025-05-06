@@ -20,31 +20,25 @@ body {
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: var(--white);
 }
 
-/* Dynamic Background */
-body::before {
-    content: '';
+/* Particles Background */
+#particles-js {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--primary-pink), var(--secondary-pink));
+    top: 0;
+    left: 0;
     z-index: -1;
-    animation: gradientBG 15s ease infinite;
+    background: linear-gradient(45deg, var(--primary-pink), var(--secondary-pink));
+    pointer-events: none;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Make sure content is above particles */
+header, main, footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* Header Styles */
@@ -76,6 +70,51 @@ nav a:hover {
     color: var(--accent-pink);
 }
 
+/* Hero Section */
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-pink);
+}
+
+.hero-image {
+    margin: 2rem 0;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    border: 3px solid var(--accent-pink);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-bio {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 2rem;
+}
+
+.hero-bio p {
+    margin-bottom: 1rem;
+}
+
 /* Main Content Styles */
 main {
     padding-top: 80px;
@@ -93,6 +132,42 @@ section {
 h1, h2, h3 {
     color: var(--accent-pink);
     margin-bottom: 1.5rem;
+}
+
+/* Hobbies Section */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Blog Section */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
 }
 
 /* About Section */
@@ -197,13 +272,23 @@ footer {
         gap: 1rem;
     }
 
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
     .about-content {
         flex-direction: column;
         text-align: center;
     }
 
     .projects-grid,
-    .skills-grid {
+    .skills-grid,
+    .hobbies-grid,
+    .blog-posts {
         grid-template-columns: 1fr;
     }
 }

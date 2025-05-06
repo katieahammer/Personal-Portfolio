@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio of Katherine Hammer, Computer Science Engineering student at NC State University">
-    <title>Katherine Hammer | Professional Portfolio</title>
+    <meta name="description" content="Personal portfolio of Katherine Hammer, Computer Science Engineering graduate from NC State University">
+    <title>Katherine Hammer | Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
 </head>
 <body>
+    <div id="particles-js"></div>
+    
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <ul>
@@ -15,21 +18,33 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="hero" class="full-height">
+            <div class="hero-content">
+                <h1>Katherine Hammer</h1>
+                <div class="hero-image">
+                    <!-- Add your photo here -->
+                    <img src="profile.jpg" alt="Katherine Hammer professional headshot" width="300" height="300">
+                </div>
+                <div class="hero-bio">
+                    <p>I recently graduated from NC State University with my Bachelor's in Computer Science (May 2025) and am excited to begin my professional journey in the tech industry.</p>
+                    <p>This site is a window into who I am - not just as a computer scientist, but as a person with diverse interests, passions, and experiences.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="about" aria-labelledby="about-heading">
-            <h1 id="about-heading">Katherine Hammer</h1>
+            <h2 id="about-heading">About Me</h2>
             <div class="about-content">
-                <img src="profile.jpg" alt="Katherine Hammer professional headshot" width="300" height="300">
-                <div class="contact-info">
-                    <p>(919) 450-7232 | katieahammer@gmail.com</p>
-                    <p>Local: 1310 Thornbury Ave, Raleigh, NC 27607</p>
-                    <p>Permanent: 289 Imagine Way, Pittsboro NC, 27317</p>
+                <div class="about-text">
+                    <p>Beyond my academic and professional achievements, I'm passionate about [Your Hobbies/Interests]. I believe in creating technology that makes a positive impact on people's lives.</p>
                 </div>
             </div>
         </section>
@@ -124,6 +139,20 @@
             </div>
         </section>
 
+        <section id="hobbies" aria-labelledby="hobbies-heading">
+            <h2 id="hobbies-heading">Hobbies & Interests</h2>
+            <div class="hobbies-grid">
+                <!-- Add your hobbies here -->
+            </div>
+        </section>
+
+        <section id="blog" aria-labelledby="blog-heading">
+            <h2 id="blog-heading">Blog</h2>
+            <div class="blog-posts">
+                <!-- Add your blog posts here -->
+            </div>
+        </section>
+
         <section id="skills" aria-labelledby="skills-heading">
             <h2 id="skills-heading">Technical Skills</h2>
             <div class="skills-grid">
@@ -182,5 +211,94 @@
     <footer role="contentinfo">
         <p>&copy; 2024 Katherine Hammer. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 100,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffd1dc'
+                    },
+                    shape: {
+                        type: 'circle'
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffb6c1',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: true,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        });
+    </script>
 </body>
 </html> 
