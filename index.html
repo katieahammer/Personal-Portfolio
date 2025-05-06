@@ -7,13 +7,17 @@
     <title>Katherine Hammer | Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="particles-js"></div>
     
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
-            <ul>
+            <div class="nav-brand">KH</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -22,26 +26,34 @@
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
     <main>
-        <section id="hero" class="full-height">
+        <section id="home" class="full-height">
             <div class="hero-content">
-                <h1>Katherine Hammer</h1>
+                <h1 class="animate-text">Katherine Hammer</h1>
                 <div class="hero-image">
-                    <!-- Add your photo here -->
                     <img src="profile.jpg" alt="Katherine Hammer professional headshot" width="300" height="300">
                 </div>
                 <div class="hero-bio">
-                    <p>I recently graduated from NC State University with my Bachelor's in Computer Science (May 2025) and am excited to begin my professional journey in the tech industry.</p>
-                    <p>This site is a window into who I am - not just as a computer scientist, but as a person with diverse interests, passions, and experiences.</p>
+                    <p class="animate-text">I recently graduated from NC State University with my Bachelor's in Computer Science (May 2025) and am excited to begin my professional journey in the tech industry.</p>
+                    <p class="animate-text">This site is a window into who I am - not just as a computer scientist, but as a person with diverse interests, passions, and experiences.</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </section>
 
-        <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">About Me</h2>
+        <section id="about" class="section-padding">
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Beyond my academic and professional achievements, I'm passionate about [Your Hobbies/Interests]. I believe in creating technology that makes a positive impact on people's lives.</p>
@@ -49,43 +61,45 @@
             </div>
         </section>
 
-        <section id="education" aria-labelledby="education-heading">
-            <h2 id="education-heading">Education</h2>
+        <section id="education" class="section-padding">
+            <h2 class="section-title">Education</h2>
             <div class="education-content">
-                <h3>North Carolina State University</h3>
-                <p class="degree">Computer Science Engineering - Bachelor of Science</p>
-                <p class="graduation">Expected Graduation: May 2025</p>
-                <div class="courses">
-                    <h4>Relevant Courses:</h4>
-                    <ul>
-                        <li>Software Engineering</li>
-                        <li>Operating Systems</li>
-                        <li>Software System Anatomy</li>
-                        <li>Data Structures</li>
-                        <li>Software Development</li>
-                        <li>Self-Driving Cars</li>
-                        <li>Functional Programming</li>
-                        <li>Privacy in Digital Age</li>
-                        <li>Automata & Grammars</li>
-                        <li>C/Software Tools</li>
-                        <li>Linear Algebra</li>
-                        <li>Statistics</li>
-                        <li>Technical Writing</li>
-                        <li>Ethics of Computing</li>
-                        <li>Engineering in the 21st Century</li>
-                        <li>Animal Computer Interaction</li>
-                        <li>Intro to Nuclear Engineering</li>
-                        <li>Entrepreneurship</li>
-                        <li>Senior Design</li>
-                    </ul>
+                <div class="education-card">
+                    <h3>North Carolina State University</h3>
+                    <p class="degree">Computer Science Engineering - Bachelor of Science</p>
+                    <p class="graduation">Expected Graduation: May 2025</p>
+                    <div class="courses">
+                        <h4>Relevant Courses:</h4>
+                        <ul class="course-list">
+                            <li>Software Engineering</li>
+                            <li>Operating Systems</li>
+                            <li>Software System Anatomy</li>
+                            <li>Data Structures</li>
+                            <li>Software Development</li>
+                            <li>Self-Driving Cars</li>
+                            <li>Functional Programming</li>
+                            <li>Privacy in Digital Age</li>
+                            <li>Automata & Grammars</li>
+                            <li>C/Software Tools</li>
+                            <li>Linear Algebra</li>
+                            <li>Statistics</li>
+                            <li>Technical Writing</li>
+                            <li>Ethics of Computing</li>
+                            <li>Engineering in the 21st Century</li>
+                            <li>Animal Computer Interaction</li>
+                            <li>Intro to Nuclear Engineering</li>
+                            <li>Entrepreneurship</li>
+                            <li>Senior Design</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" aria-labelledby="experience-heading">
-            <h2 id="experience-heading">Experience</h2>
+        <section id="experience" class="section-padding">
+            <h2 class="section-title">Experience</h2>
             <div class="experience-timeline">
-                <article>
+                <article class="experience-card">
                     <h3>Generative AI Quality Rater</h3>
                     <p class="duration">August 2024 - Present</p>
                     <ul>
@@ -94,7 +108,7 @@
                         <li>Contributed to model optimization and performance metrics</li>
                     </ul>
                 </article>
-                <article>
+                <article class="experience-card">
                     <h3>Summer Researcher</h3>
                     <p class="company">University College Dublin</p>
                     <p class="duration">May 2024 - July 2024</p>
@@ -104,7 +118,7 @@
                         <li>Collaborated with professor and PhD student on experimental design</li>
                     </ul>
                 </article>
-                <article>
+                <article class="experience-card">
                     <h3>Summer Coding Teacher</h3>
                     <p class="company">The Coder School</p>
                     <p class="duration">May 2023 - August 2023</p>
@@ -117,92 +131,74 @@
             </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">Projects</h2>
+        <section id="projects" class="section-padding">
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <article class="project-card">
-                    <h3>Senior Design Capstone</h3>
-                    <p>Engineered visual novel application for Katabasis nonprofit using Ren'Py and Twine engines, implementing branching narrative system and CDD visualization software for behavioral analysis</p>
+                    <div class="project-content">
+                        <h3>Senior Design Capstone</h3>
+                        <p>Engineered visual novel application for Katabasis nonprofit using Ren'Py and Twine engines, implementing branching narrative system and CDD visualization software for behavioral analysis</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="project-card">
-                    <h3>Autonomous Vehicle Development</h3>
-                    <p>Implemented ROS2 and computer vision for lane detection and obstacle avoidance using Teensy microcontroller</p>
+                    <div class="project-content">
+                        <h3>Autonomous Vehicle Development</h3>
+                        <p>Implemented ROS2 and computer vision for lane detection and obstacle avoidance using Teensy microcontroller</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="project-card">
-                    <h3>NC Zoo Collaboration</h3>
-                    <p>Designed automated habitat control system for mouse lemurs using sensor integration</p>
+                    <div class="project-content">
+                        <h3>NC Zoo Collaboration</h3>
+                        <p>Designed automated habitat control system for mouse lemurs using sensor integration</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </article>
                 <article class="project-card">
-                    <h3>Engineering Design Competition</h3>
-                    <p>Designed and built 3rd place collapsible bridge meeting weight and time constraints</p>
+                    <div class="project-content">
+                        <h3>Engineering Design Competition</h3>
+                        <p>Designed and built 3rd place collapsible bridge meeting weight and time constraints</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="hobbies" aria-labelledby="hobbies-heading">
-            <h2 id="hobbies-heading">Hobbies & Interests</h2>
+        <section id="hobbies" class="section-padding">
+            <h2 class="section-title">Hobbies & Interests</h2>
             <div class="hobbies-grid">
                 <!-- Add your hobbies here -->
             </div>
         </section>
 
-        <section id="blog" aria-labelledby="blog-heading">
-            <h2 id="blog-heading">Blog</h2>
+        <section id="blog" class="section-padding">
+            <h2 class="section-title">Blog</h2>
             <div class="blog-posts">
                 <!-- Add your blog posts here -->
             </div>
         </section>
 
-        <section id="skills" aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages & Frameworks</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>C</li>
-                        <li>SQL</li>
-                        <li>HTML/CSS</li>
-                        <li>MATLAB</li>
-                        <li>React</li>
-                        <li>Ren'Py</li>
-                        <li>Scratch</li>
-                        <li>Scheme</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Development Tools & Technologies</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>VS Code</li>
-                        <li>Jenkins</li>
-                        <li>Docker</li>
-                        <li>JUnit</li>
-                        <li>AutoCAD</li>
-                        <li>Circuit Design</li>
-                        <li>3D Printing</li>
-                        <li>API Development</li>
-                        <li>MVC Architecture</li>
-                        <li>UML Design</li>
-                        <li>Eclipse</li>
-                        <li>ROS2</li>
-                        <li>Computer Vision</li>
-                        <li>Teensy Microcontroller</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Contact</h2>
+        <section id="contact" class="section-padding">
+            <h2 class="section-title">Contact</h2>
             <div class="contact-methods">
                 <p>Email: <a href="mailto:katieahammer@gmail.com">katieahammer@gmail.com</a></p>
                 <p>Phone: (919) 450-7232</p>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
@@ -213,6 +209,7 @@
     </footer>
 
     <script>
+        // Particles.js configuration
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
@@ -297,6 +294,54 @@
                     }
                 },
                 retina_detect: true
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Sticky navigation
+            const header = document.querySelector('header');
+            const nav = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+
+                // Highlight current section
+                let current = '';
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Mobile menu
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinksContainer = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinksContainer.classList.toggle('active');
             });
         });
     </script>
