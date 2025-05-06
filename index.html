@@ -40,14 +40,14 @@
                 <div class="business-card">
                     <div class="card-left">
                         <div class="hero-image">
-                            <img src="profile.jpg" alt="Katherine Hammer professional headshot" width="200" height="200">
+                            <img src="https://placehold.co/200x200/ffb6c1/ffffff?text=KH" alt="Katherine Hammer professional headshot" width="200" height="200">
                         </div>
                     </div>
                     <div class="card-right">
                         <h1 class="animate-text">Katherine Hammer</h1>
-                        <p class="title">Computer Science Graduate</p>
+                        <p class="title">Computer Scientist</p>
                         <div class="bio">
-                            <p>Passionate about creating innovative solutions that make a difference. Combining technical expertise with creative problem-solving to build the future of technology.</p>
+                            <p>Passionate about creating innovative solutions that make a difference.</p>
                         </div>
                         <div class="contact-info">
                             <p><i class="fas fa-envelope"></i> katieahammer@gmail.com</p>
@@ -234,15 +234,15 @@
     </footer>
 
     <script>
-        // Initialize particles.js with enhanced configuration
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles.js
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: 120,
+                        value: 80,
                         density: {
                             enable: true,
-                            value_area: 800
+                            value_area: 1000
                         }
                     },
                     color: {
@@ -256,7 +256,7 @@
                         }
                     },
                     opacity: {
-                        value: 0.6,
+                        value: 0.4,
                         random: true,
                         anim: {
                             enable: true,
@@ -266,7 +266,7 @@
                         }
                     },
                     size: {
-                        value: 4,
+                        value: 3,
                         random: true,
                         anim: {
                             enable: true,
@@ -279,12 +279,12 @@
                         enable: true,
                         distance: 150,
                         color: '#ffb6c1',
-                        opacity: 0.4,
+                        opacity: 0.2,
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: 2,
+                        speed: 1.5,
                         direction: 'none',
                         random: true,
                         straight: false,
@@ -314,56 +314,66 @@
                         grab: {
                             distance: 140,
                             line_linked: {
-                                opacity: 1
+                                opacity: 0.5
                             }
                         },
                         push: {
-                            particles_nb: 6
+                            particles_nb: 3
                         }
                     }
                 },
                 retina_detect: true
             });
 
-            // Show/hide header based on scroll position
+            // Header visibility control
             const header = document.querySelector('header');
             let lastScroll = 0;
+            const scrollThreshold = window.innerHeight * 0.7; // Show header after 70% of viewport height
 
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset;
                 
-                // Show header after scrolling past the hero section
-                if (currentScroll > window.innerHeight * 0.8) {
-                    header.classList.remove('hidden');
-                    if (currentScroll > lastScroll) {
-                        header.classList.add('sticky');
-                    } else {
-                        header.classList.remove('sticky');
-                    }
+                // Show/hide header based on scroll position
+                if (currentScroll > scrollThreshold) {
+                    header.classList.add('visible');
                 } else {
-                    header.classList.add('hidden');
+                    header.classList.remove('visible');
                 }
                 
                 lastScroll = currentScroll;
             });
 
-            // Smooth scrolling
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const headerOffset = 80; // Height of your fixed header
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    const navLinks = document.querySelector('.nav-links');
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
                 });
             });
 
-            // Mobile menu
+            // Mobile menu toggle
             const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinksContainer = document.querySelector('.nav-links');
+            const navLinks = document.querySelector('.nav-links');
 
             mobileMenu.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
-                navLinksContainer.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
         });
     </script>
