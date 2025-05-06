@@ -6,14 +6,14 @@
     <meta name="description" content="Personal portfolio of Katherine Hammer, Computer Science Engineering graduate from NC State University">
     <title>Katherine Hammer | Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="particles-js"></div>
     
-    <header role="banner">
+    <header role="banner" class="hidden">
         <nav role="navigation" aria-label="Main navigation">
             <div class="nav-brand">KH</div>
             <ul class="nav-links">
@@ -209,12 +209,12 @@
     </footer>
 
     <script>
-        // Particles.js configuration
+        // Initialize particles.js
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: 100,
+                        value: 80,
                         density: {
                             enable: true,
                             value_area: 800
@@ -296,6 +296,28 @@
                 retina_detect: true
             });
 
+            // Show/hide header based on scroll position
+            const header = document.querySelector('header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Show header after scrolling past the hero section
+                if (currentScroll > window.innerHeight * 0.8) {
+                    header.classList.remove('hidden');
+                    if (currentScroll > lastScroll) {
+                        header.classList.add('sticky');
+                    } else {
+                        header.classList.remove('sticky');
+                    }
+                } else {
+                    header.classList.add('hidden');
+                }
+                
+                lastScroll = currentScroll;
+            });
+
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -303,35 +325,6 @@
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                });
-            });
-
-            // Sticky navigation
-            const header = document.querySelector('header');
-            const nav = document.querySelector('nav');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('sticky');
-                } else {
-                    header.classList.remove('sticky');
-                }
-
-                // Highlight current section
-                let current = '';
-                document.querySelectorAll('section').forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.scrollY >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').slice(1) === current) {
-                        link.classList.add('active');
-                    }
                 });
             });
 
